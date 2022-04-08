@@ -45,6 +45,7 @@ function saveRecord(record) {
 // function that will handle collecting all of the data 
 function uploadBudget() {
     alert("online")
+    console.log("upload() getting hit")
     // open transaction on your pending db
     const transaction = db.transaction(['new_transaction'], 'readwrite');
 
