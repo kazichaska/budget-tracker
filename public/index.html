@@ -10,7 +10,7 @@
       href="icons/icon-192x192.png"
       type="image/x-icon"
     />
-
+    <link rel="manifest" href="manifest.json" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -54,7 +54,19 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="js/index.js"></script>
     <script src="js/idb.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+      (function () {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker
+            .register("./service-worker.js")
+            .then(() => console.log("Service Worker registered successfully."))
+            .catch((error) =>
+              console.log("Service Worker registration failed:", error)
+            );
+        }
+      })();
+    </script>
   </body>
 </html>
